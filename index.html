@@ -1,39 +1,196 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html class="scroll-smooth" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPDM Studio Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SPDM Studio | Software Development &amp; Design</title>
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Bienvenido a SPDM Studio</h1>
-        <p>Tu página principal está lista.</p>
-    </div>
+
+<body class="antialiased font-sans">
+    <!-- BEGIN: MainHeader -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" data-purpose="navigation-bar">
+            <!-- Logo Branding -->
+            <a class="w-16 h-16 transition-transform hover:scale-105" href="#">
+                <img alt="SPDM Studio Logo" class="w-full h-full object-contain"
+                    src="Assets/2.png" />
+            </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-light">
+                <a class="hover:text-gray-400 transition-colors" href="#home">Home</a>
+                <a class="hover:text-gray-400 transition-colors" href="#about">About</a>
+                <a class="hover:text-gray-400 transition-colors" href="#projects">Projects</a>
+                <a class="hover:text-gray-400 transition-colors" href="#contact">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-toggle">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <!-- END: MainHeader -->
+    <main>
+        <!-- BEGIN: HeroSection -->
+        <section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+            id="home">
+            <!-- Large Background Logo (Watermark style) -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+                <img alt="SPDM Watermark" class="w-2/3 max-w-4xl animate-pulse"
+                    src="Assets/2.png" />
+
+            </div>
+            <div class="z-10" data-purpose="hero-content">
+                <img alt="SPDM Studio" class="w-48 md:w-64 mx-auto mb-12 shadow-2xl"
+                    src="Assets/2.png" />  
+                <h1 class="text-4xl md:text-7xl font-thin tracking-tighter mb-4">SOFTWARE WITH SOUL.</h1>
+                <p class="text-sm md:text-base tracking-[0.5em] text-gray-400 font-light uppercase">Software Development Studio</p>
+            </div>
+            <div class="absolute bottom-10 animate-bounce">
+                <a href="#about">
+                    <svg class="h-6 w-6 text-gray-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+        <!-- END: HeroSection -->
+        <!-- BEGIN: NosotrosSection -->
+        <section class="bg-brandSlate text-white py-32 px-6" id="about">
+            <div class="container mx-auto max-w-5xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div data-purpose="about-text">
+                        <span class="text-xs font-bold tracking-widest text-gray-400 block mb-4 uppercase">About the
+                            studio</span>
+                        <h2 class="text-4xl md:text-5xl font-light leading-tight mb-8">Redefining contemporary
+                            digital experiences.</h2>
+                        <p class="text-lg text-gray-400 leading-relaxed mb-6 font-light">
+                            SPDM Studio was born as a continuous learning project with a clear mission: designing and
+                            publishing high-quality mobile applications. We believe that learning is an ongoing journey that
+                            drives innovation.
+                        </p>
+                        <p class="text-lg text-gray-400 leading-relaxed font-light">
+                            Our primary goal is to create applications that are not only visually stunning but also truly
+                            useful for people's daily lives, turning functional needs into beautiful digital experiences.
+                        </p>
+                    </div>
+                    <div class="relative h-[500px] bg-zinc-800 overflow-hidden" data-purpose="about-image">
+                        <!-- Placeholder for architectural detail image -->
+                        <img alt="Code" class="w-full h-full object-cover opacity-80"
+                            src="Assets/code.jpg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: NosotrosSection -->
+        <!-- BEGIN: ProyectosSection -->
+        <section class="py-32 bg-brandBlack text-white" id="projects">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-between items-end mb-16">
+                    <h2 class="text-3xl md:text-4xl font-light tracking-tight">Selected <span
+                            class="text-gray-600">Works</span></h2>
+                </div>
+                <!-- Clean single project -->
+                <div class="flex justify-center" data-purpose="project-grid">
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden project-card h-[600px] w-full max-w-4xl bg-brandSlate">
+                        <img alt="My Scoreboard App"
+                            class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-700"
+                            src="Assets/myscoreboard.png" />
+                        <div
+                            class="absolute inset-0 bg-black/60 flex flex-col justify-end p-8 opacity-0 project-overlay transition-opacity duration-500">
+                            <p class="text-xs tracking-widest mb-2 text-gray-400">MOBILE APP</p>
+                            <h3 class="text-2xl font-light">My Scoreboard</h3>
+                            <a class="mt-4 text-xs underline underline-offset-8 tracking-widest uppercase hover:text-gray-300"
+                                href="myscoreboard.html">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: ProyectosSection -->
+        <!-- BEGIN: ContactoSection -->
+        <section class="bg-brandSlate py-32 px-6 border-t border-white/5" id="contact">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-20">
+                    <h2 class="text-white text-4xl md:text-5xl font-light mb-4">Let's build together.</h2>
+                    <p class="text-gray-400 tracking-widest text-xs uppercase">Inquire about new projects</p>
+                </div>
+                <form action="https://formsubmit.co/spdmstudio@gmail.com" class="grid grid-cols-1 md:grid-cols-2 gap-8" data-purpose="contact-form"
+                    method="POST">
+                    <!-- Configuración extra de FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web SPDM Studio!">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="col-span-1">
+                        <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Name</label>
+                        <input
+                            name="name"
+                            class="w-full bg-transparent border-b border-gray-600 border-t-0 border-l-0 border-r-0 focus:ring-0 focus:border-white transition-colors px-0 py-3 text-white placeholder:text-gray-500"
+                            placeholder="John Doe" type="text" required />
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Email</label>
+                        <input
+                            name="email"
+                            class="w-full bg-transparent border-b border-gray-600 border-t-0 border-l-0 border-r-0 focus:ring-0 focus:border-white transition-colors px-0 py-3 text-white placeholder:text-gray-500"
+                            placeholder="john@example.com" type="email" required />
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Message</label>
+                        <textarea
+                            name="message"
+                            class="w-full bg-transparent border-b border-gray-600 border-t-0 border-l-0 border-r-0 focus:ring-0 focus:border-white transition-colors px-0 py-3 text-white placeholder:text-gray-500 resize-none"
+                            placeholder="Tell us about your project..." rows="4" required></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-right mt-8">
+                        <button
+                            class="bg-white text-brandBlack px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-gray-200 transition-all"
+                            type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- END: ContactoSection -->
+    </main>
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-brandBlack text-white py-12 px-6 border-t border-white/5">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <img alt="SPDM Logo Footer" class="w-12 h-12"
+                    src="Assets/2.png" />
+            </div>
+            <div class="flex flex-col items-center md:items-end space-y-4">
+                <p class="text-xs tracking-widest text-gray-500">© 2026 SPDM STUDIO. ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-6 text-gray-400">
+                    <a class="text-xs hover:text-white transition-colors" href="https://github.com/SPDM-Studios" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="text-xs hover:text-white transition-colors" href="https://www.linkedin.com/company/spdm-studio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: MainFooter -->
+    <!-- JavaScript for interactivity -->
+    <script data-purpose="mobile-navigation">
+        const menuBtn = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.md\\:flex');
+
+        menuBtn.addEventListener('click', () => {
+            // Toggle logic for mobile menu would go here
+            // For a minimalist demo, we focus on responsive layout
+        });
+    </script>
 </body>
+
 </html>

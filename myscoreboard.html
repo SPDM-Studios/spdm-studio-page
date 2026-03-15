@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Scoreboard | SPDM Studio</title>
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="antialiased font-sans flex flex-col min-h-screen">
+    <!-- BEGIN: MainHeader -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" data-purpose="navigation-bar">
+            <!-- Logo Branding -->
+            <a class="w-16 h-16 transition-transform hover:scale-105" href="index.html">
+                <img alt="SPDM Studio Logo" class="w-full h-full object-contain"
+                    src="Assets/2.png" />
+            </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-light">
+                <a class="hover:text-gray-400 transition-colors" href="index.html#home">Home</a>
+                <a class="hover:text-gray-400 transition-colors" href="index.html#about">About</a>
+                <a class="hover:text-gray-400 transition-colors" href="index.html#projects">Projects</a>
+                <a class="hover:text-gray-400 transition-colors" href="index.html#contact">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-toggle">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                    </path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+    <!-- END: MainHeader -->
+
+    <main class="flex-grow pt-32 pb-20">
+        <!-- BEGIN: Project Detail Section -->
+        <section class="container mx-auto px-6 max-w-5xl">
+            <!-- Project Header -->
+            <div class="mb-12">
+                <a href="index.html#projects" class="text-gray-400 text-xs tracking-widest uppercase hover:text-white transition-colors mb-6 inline-block">&larr; Back to Works</a>
+                <h1 class="text-5xl md:text-6xl font-light mb-4 text-white">My Scoreboard</h1>
+                <p class="text-xs tracking-widest text-gray-400 uppercase">MOBILE APP</p>
+            </div>
+
+            <!-- Main Image -->
+            <div class="flex justify-center mb-16">
+                <img alt="My Scoreboard Large Preview" class="max-w-full h-auto max-h-[600px] rounded-lg" src="Assets/myscoreboard.png" />
+            </div>
+
+            <!-- Project Details -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-400 font-light">
+                <div class="md:col-span-2 space-y-6 text-lg">
+                    <h2 class="text-3xl font-light text-white mb-6">Overview</h2>
+                    <p>
+                        My Scoreboard is a versatile and intuitive mobile application designed to help users keep track of scores for a variety of sports and games. Whether you are playing basketball, tennis, volleyball, or any casual backyard game, My Scoreboard provides a simple and clean interface to manage the game effectively.
+                    </p>
+                    <p>
+                        The application features a dark-themed UI that emphasizes visibility and ease of use, ensuring that the current score is always the focal point without unnecessary distractions during gameplay.
+                    </p>
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-white text-xs tracking-widest uppercase mb-2">Role</h4>
+                        <p>UI/UX Design, App Development</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-xs tracking-widest uppercase mb-2">Platform</h4>
+                        <p>Android</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- END: Project Detail Section -->
+
+        <!-- BEGIN: Privacy Policy Section -->
+        <section class="container mx-auto px-6 max-w-5xl mt-24">
+            <hr class="border-white/10 mb-16">
+            <h2 class="text-3xl md:text-4xl font-light mb-8 text-white">Privacy Policy</h2>
+            <div class="text-gray-400 font-light space-y-6 text-sm md:text-base">
+                <p><strong>Last updated:</strong> February 22, 2026</p>
+                <p>
+                    We built the My Scoreboard app as a Free/Freemium app. This SERVICE is provided at no cost and is intended for use as is. This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our App.
+                </p>
+
+                <h3 class="text-xl font-medium text-white pt-4">1. Information Collection and Use</h3>
+                <p>
+                    For a better experience, while using our App, we do <strong>NOT</strong> require you to provide us with any personally identifiable information. The App operates locally on your device, and we do not collect, store, or send personal data to external servers.
+                </p>
+                <p>
+                    The app does use third-party services (such as Google AdMob / Google Play Billing) that may collect anonymous information used to identify your device to show relevant ads or process payments.
+                </p>
+
+                <h3 class="text-xl font-medium text-white pt-4">2. Log Data</h3>
+                <p>
+                    We want to inform you that whenever you use our App, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other anonymous statistics.
+                </p>
+
+                <h3 class="text-xl font-medium text-white pt-4">3. Cookies</h3>
+                <p>This App does not use "cookies" explicitly.</p>
+
+                <h3 class="text-xl font-medium text-white pt-4">4. Service Providers</h3>
+                <p>We may employ third-party companies and individuals due to the following reasons:</p>
+                <ul class="list-disc list-inside pl-4 space-y-2">
+                    <li>To facilitate our Service;</li>
+                    <li>To provide the Service on our behalf; or</li>
+                    <li>To assist us in analyzing how our Service is used.</li>
+                </ul>
+
+                <h3 class="text-xl font-medium text-white pt-4">5. Links to Other Sites</h3>
+                <p>Our App does not contain links to other sites natively.</p>
+
+                <h3 class="text-xl font-medium text-white pt-4">6. Children’s Privacy</h3>
+                <p>
+                    Our App does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13 years of age.
+                </p>
+
+                <h3 class="text-xl font-medium text-white pt-4">7. Changes to This Privacy Policy</h3>
+                <p>
+                    We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.
+                </p>
+
+                <h3 class="text-xl font-medium text-white pt-4">8. Contact Us</h3>
+                <p>
+                    If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>spdmstudio@gmail.com</strong>
+                </p>
+            </div>
+        </section>
+        <!-- END: Privacy Policy Section -->
+    </main>
+
+    <!-- BEGIN: MainFooter -->
+    <footer class="bg-brandBlack text-white py-12 px-6 border-t border-white/5 mt-auto">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <img alt="SPDM Logo Footer" class="w-12 h-12" src="Assets/2.png" />
+            </div>
+            <div class="flex flex-col items-center md:items-end space-y-4">
+                <p class="text-xs tracking-widest text-gray-500">© 2026 SPDM STUDIO. ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-6 text-gray-400">
+                    <a class="text-xs hover:text-white transition-colors" href="https://github.com/SPDM-Studios" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="text-xs hover:text-white transition-colors" href="https://www.linkedin.com/company/spdm-studio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: MainFooter -->
+</body>
+</html>
