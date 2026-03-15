@@ -127,7 +127,8 @@
                     <h2 class="text-white text-4xl md:text-5xl font-light mb-4">Let's build together.</h2>
                     <p class="text-gray-400 tracking-widest text-xs uppercase">Inquire about new projects</p>
                 </div>
-                <form action="https://formsubmit.co/spdmstudio@gmail.com" class="grid grid-cols-1 md:grid-cols-2 gap-8" data-purpose="contact-form"
+                <!-- Añadido ID al formulario para manejarlo con JS -->
+                <form id="contactForm" action="https://formsubmit.co/spdmstudio@gmail.com" class="grid grid-cols-1 md:grid-cols-2 gap-8" data-purpose="contact-form"
                     method="POST">
                     <!-- Configuración extra de FormSubmit -->
                     <input type="hidden" name="_subject" value="Nuevo mensaje desde la web SPDM Studio!">
@@ -154,10 +155,13 @@
                             class="w-full bg-transparent border-b border-gray-600 border-t-0 border-l-0 border-r-0 focus:ring-0 focus:border-white transition-colors px-0 py-3 text-white placeholder:text-gray-500 resize-none"
                             placeholder="Tell us about your project..." rows="4" required></textarea>
                     </div>
-                    <div class="md:col-span-2 text-right mt-8">
+                    <div class="md:col-span-2 text-right mt-8 flex flex-col items-end">
                         <button
+                            id="submitBtn"
                             class="bg-white text-brandBlack px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-gray-200 transition-all"
                             type="submit">Send Message</button>
+                        <!-- Mensaje de estado oculto por defecto -->
+                        <p id="formStatus" class="text-sm mt-4 hidden"></p>
                     </div>
                 </form>
             </div>
@@ -181,16 +185,9 @@
         </div>
     </footer>
     <!-- END: MainFooter -->
-    <!-- JavaScript for interactivity -->
-    <script data-purpose="mobile-navigation">
-        const menuBtn = document.getElementById('mobile-menu-toggle');
-        const navLinks = document.querySelector('.md\\:flex');
-
-        menuBtn.addEventListener('click', () => {
-            // Toggle logic for mobile menu would go here
-            // For a minimalist demo, we focus on responsive layout
-        });
-    </script>
+    
+    <!-- JavaScript logic -->
+    <script src="main.js"></script>
 </body>
 
 </html>
