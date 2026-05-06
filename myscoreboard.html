@@ -1,166 +1,248 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>My Scoreboard | SPDM Studio</title>
-    <link rel="icon" type="image/png" href="Assets/2.png">
-    <!-- Tailwind CSS v3 CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="tailwind-config.js"></script>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Scoreboard — SPDM Studio</title>
+<link rel="icon" type="image/png" href="Assets/2.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .case-hero{display:grid;grid-template-columns:1.1fr 1fr;border-bottom:1px solid var(--line)}
+  .case-hero .l{padding:80px 56px}
+  .case-hero .r{background:#0d0f0e;border-left:1px solid var(--line);position:relative;display:flex;align-items:center;justify-content:center;padding:56px;min-height:600px}
+  .case-hero .r::before{content:"";position:absolute;inset:0;background-image:linear-gradient(transparent 0%, transparent 95%, rgba(255,255,255,0.04) 100%) 0 0/100% 16px,linear-gradient(90deg, transparent 0%, transparent 95%, rgba(255,255,255,0.04) 100%) 0 0/16px 100%;pointer-events:none}
+  .case-hero .r img{max-height:520px;width:auto;filter:drop-shadow(0 30px 80px rgba(0,0,0,0.9));position:relative;z-index:1}
+  .case-hero .r .corner{position:absolute;width:14px;height:14px;border:1px solid var(--accent)}
+  .case-hero .r .corner.tl{top:8px;left:8px;border-right:0;border-bottom:0}
+  .case-hero .r .corner.tr{top:8px;right:8px;border-left:0;border-bottom:0}
+  .case-hero .r .corner.bl{bottom:8px;left:8px;border-right:0;border-top:0}
+  .case-hero .r .corner.br{bottom:8px;right:8px;border-left:0;border-top:0}
+  .case-hero .r .tape{position:absolute;top:18px;left:18px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.1em;z-index:2}
+  .case-hero h1{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(56px,7vw,108px);line-height:0.96;letter-spacing:-0.04em;margin:24px 0}
+  .case-hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+  .case-hero .lede{font-size:18px;line-height:1.6;color:var(--fg-2);font-weight:300;max-width:48ch;margin-bottom:36px}
+  .case-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;border-top:1px solid var(--line);padding-top:28px}
+  .case-meta .k{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+  .case-meta .v{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--fg)}
+  .case-meta .v.ok{color:var(--accent)}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);border:1px solid var(--accent-dim);padding:6px 12px;border-radius:2px;letter-spacing:0.08em}
+  .badge .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.6s infinite}
+
+  .twocol{display:grid;grid-template-columns:1.5fr 1fr;gap:48px}
+  .body-text h3{font-family:'Inter',sans-serif;font-weight:400;font-size:28px;letter-spacing:-0.01em;margin:32px 0 14px}
+  .body-text h3:first-child{margin-top:0}
+  .body-text p{font-size:16px;line-height:1.7;color:var(--fg);font-weight:300;margin-bottom:18px;max-width:64ch}
+  .side-meta{border-left:1px solid var(--line);padding-left:32px;display:flex;flex-direction:column;gap:24px}
+  .side-meta .row .k{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
+  .side-meta .row .v{font-family:'Inter',sans-serif;font-weight:300;font-size:16px;color:var(--fg)}
+  .side-meta .row .v a{color:var(--accent);display:inline-flex;align-items:center;gap:8px}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);margin-top:24px}
+  .feature{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .feature:nth-child(3n){border-right:0}
+  .feature:nth-last-child(-n+3){border-bottom:0}
+  .feature .ix{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.12em;margin-bottom:14px}
+  .feature h4{font-family:'Inter',sans-serif;font-weight:400;font-size:18px;letter-spacing:-0.01em;margin-bottom:8px}
+  .feature p{color:var(--fg-2);font-size:13px;line-height:1.6;font-weight:300}
+  .privacy-list h3{font-family:'Inter',sans-serif;font-weight:400;font-size:18px;letter-spacing:-0.01em;margin:28px 0 10px;color:var(--fg)}
+  .privacy-list h3 .ix{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:13px;margin-right:12px}
+  .privacy-list p{color:var(--fg-2);font-size:14px;line-height:1.65;font-weight:300;margin-bottom:14px;max-width:72ch}
+  .privacy-list ul{padding-left:0;list-style:none}
+  .privacy-list ul li{color:var(--fg-2);font-size:14px;line-height:1.65;font-weight:300;padding-left:24px;position:relative;margin-bottom:8px}
+  .privacy-list ul li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-family:'JetBrains Mono',monospace}
+
+  @media (max-width:960px){
+    .case-hero{grid-template-columns:1fr}
+    .case-hero .r{border-left:0;border-top:1px solid var(--line);min-height:420px;padding:32px}
+    .case-hero .l{padding:32px 24px}
+    .twocol{grid-template-columns:1fr}
+    .side-meta{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:24px}
+    .feature-grid{grid-template-columns:1fr}
+    .feature{border-right:0;border-bottom:1px solid var(--line) !important}
+  }
+</style>
 </head>
+<body>
+<div class="grid-bg"></div>
 
-<body class="antialiased font-sans flex flex-col min-h-screen">
-    <!-- BEGIN: MainHeader -->
-    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/10">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center" data-purpose="navigation-bar">
-            <!-- Logo Branding -->
-            <a class="w-16 h-16 transition-transform hover:scale-105" href="index.html">
-                <img alt="SPDM Studio Logo" class="w-full h-full object-contain"
-                    src="Assets/2.png" />
-            </a>
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-light">
-                <a class="hover:text-gray-400 transition-colors" href="index.html#home">Home</a>
-                <a class="hover:text-gray-400 transition-colors" href="index.html#about">About</a>
-                <a class="hover:text-gray-400 transition-colors" href="index.html#projects">Projects</a>
-                <a class="hover:text-gray-400 transition-colors" href="index.html#contact">Contact</a>
-            </div>
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white" id="mobile-menu-toggle">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                    </path>
-                </svg>
-            </button>
-        </nav>
-    </header>
-    <!-- END: MainHeader -->
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="dot"></span><span class="name">SPDM</span><span class="tag mono">/studio</span></a>
+    <div class="links">
+      <a href="index.html">Index</a>
+      <a class="active" href="work.html">Work</a>
+      <a href="studio.html">Studio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+  </div>
+</nav>
 
-    <main class="flex-grow pt-32 pb-20">
-        <!-- BEGIN: Project Detail Section -->
-        <section class="container mx-auto px-6 max-w-5xl">
-            <!-- Project Header -->
-            <div class="mb-12">
-                <a href="index.html#projects" class="text-gray-400 text-xs tracking-widest uppercase hover:text-white transition-colors mb-6 inline-block">&larr; Back to Works</a>
-                <h1 class="text-5xl md:text-6xl font-light mb-4 text-white">My Scoreboard</h1>
-                <p class="text-xs tracking-widest text-gray-400 uppercase">MOBILE APP</p>
-            </div>
+<div class="frame">
 
-            <!-- Main Image -->
-            <div class="flex justify-center mb-16">
-                <img alt="My Scoreboard Large Preview" class="max-w-full h-auto max-h-[600px] rounded-lg" src="Assets/myscoreboard.png" />
-            </div>
+  <!-- CASE HERO -->
+  <section class="case-hero" style="padding-top:80px">
+    <div class="l">
+      <div class="breadcrumb mono">
+        <a href="work.html" style="color:var(--fg-3)">work</a>
+        <span class="sep">›</span>
+        <span class="cur">my-scoreboard</span>
+      </div>
+      <span class="badge mono"><span class="dot"></span>LIVE ON GOOGLE PLAY</span>
+      <h1>My <em>Scoreboard</em>.</h1>
+      <p class="lede">A versatile, intuitive mobile scoreboard for any sport or backyard game. Designed to disappear so the score takes over the room — works for basketball, tennis, volleyball, or made‑up rules at a family barbecue.</p>
 
-            <!-- Project Details -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-400 font-light">
-                <div class="md:col-span-2 space-y-6 text-lg">
-                    <h2 class="text-3xl font-light text-white mb-6">Overview</h2>
-                    <p>
-                        My Scoreboard is a versatile and intuitive mobile application designed to help users keep track of scores for a variety of sports and games. Whether you are playing basketball, tennis, volleyball, or any casual backyard game, My Scoreboard provides a simple and clean interface to manage the game effectively.
-                    </p>
-                    <p>
-                        The application features a dark-themed UI that emphasizes visibility and ease of use, ensuring that the current score is always the focal point without unnecessary distractions during gameplay.
-                    </p>
-                </div>
-                
-                <div class="space-y-8">
-                    <div>
-                        <h4 class="text-white text-xs tracking-widest uppercase mb-2">Role</h4>
-                        <p>UI/UX Design, App Development</p>
-                    </div>
-                    <div>
-                        <h4 class="text-white text-xs tracking-widest uppercase mb-2">Platform</h4>
-                        <p>Android</p>
-                    </div>
-                    <div>
-                        <h4 class="text-white text-xs tracking-widest uppercase mb-2">Download</h4>
-                        <a href="https://play.google.com/store/apps/details?id=com.spdmstudio.myscoreboard&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group">
-                            Google Play Store
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        <!-- END: Project Detail Section -->
+      <div style="display:flex;gap:14px;margin-bottom:32px">
+        <a href="https://play.google.com/store/apps/details?id=com.spdmstudio.myscoreboard&pcampaignid=web_share" target="_blank" class="cta mono" style="border:1px solid var(--accent);background:var(--accent);color:#000;padding:14px 22px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700">Get it on Play <span>→</span></a>
+        <a href="work.html" class="cta mono" style="border:1px solid var(--line-2);color:var(--fg-2);padding:14px 22px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:0.12em;text-transform:uppercase">← Back to work</a>
+      </div>
 
-        <!-- BEGIN: Privacy Policy Section -->
-        <section class="container mx-auto px-6 max-w-5xl mt-24">
-            <hr class="border-white/10 mb-16">
-            <h2 class="text-3xl md:text-4xl font-light mb-8 text-white">Privacy Policy</h2>
-            <div class="text-gray-400 font-light space-y-6 text-sm md:text-base">
-                <p><strong>Last updated:</strong> February 22, 2026</p>
-                <p>
-                    We built the My Scoreboard app as a Free/Freemium app. This SERVICE is provided at no cost and is intended for use as is. This page is used to inform visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our App.
-                </p>
+      <div class="case-meta">
+        <div><div class="k">Role</div><div class="v">UI / UX · App Development</div></div>
+        <div><div class="k">Platform</div><div class="v">Android</div></div>
+        <div><div class="k">Year</div><div class="v">2026</div></div>
+        <div><div class="k">Status</div><div class="v ok">● Shipped</div></div>
+      </div>
+    </div>
+    <div class="r">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <div class="tape mono">CASE_001 · LIVE</div>
+      <img src="Assets/myscoreboard.png" alt="My Scoreboard preview" />
+    </div>
+  </section>
 
-                <h3 class="text-xl font-medium text-white pt-4">1. Information Collection and Use</h3>
-                <p>
-                    For a better experience, while using our App, we do <strong>NOT</strong> require you to provide us with any personally identifiable information. The App operates locally on your device, and we do not collect, store, or send personal data to external servers.
-                </p>
-                <p>
-                    The app does use third-party services (such as Google AdMob / Google Play Billing) that may collect anonymous information used to identify your device to show relevant ads or process payments.
-                </p>
-
-                <h3 class="text-xl font-medium text-white pt-4">2. Log Data</h3>
-                <p>
-                    We want to inform you that whenever you use our App, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other anonymous statistics.
-                </p>
-
-                <h3 class="text-xl font-medium text-white pt-4">3. Cookies</h3>
-                <p>This App does not use "cookies" explicitly.</p>
-
-                <h3 class="text-xl font-medium text-white pt-4">4. Service Providers</h3>
-                <p>We may employ third-party companies and individuals due to the following reasons:</p>
-                <ul class="list-disc list-inside pl-4 space-y-2">
-                    <li>To facilitate our Service;</li>
-                    <li>To provide the Service on our behalf; or</li>
-                    <li>To assist us in analyzing how our Service is used.</li>
-                </ul>
-
-                <h3 class="text-xl font-medium text-white pt-4">5. Links to Other Sites</h3>
-                <p>Our App does not contain links to other sites natively.</p>
-
-                <h3 class="text-xl font-medium text-white pt-4">6. Children’s Privacy</h3>
-                <p>
-                    Our App does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13 years of age.
-                </p>
-
-                <h3 class="text-xl font-medium text-white pt-4">7. Changes to This Privacy Policy</h3>
-                <p>
-                    We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.
-                </p>
-
-                <h3 class="text-xl font-medium text-white pt-4">8. Contact Us</h3>
-                <p>
-                    If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>spdmstudio@gmail.com</strong>
-                </p>
-            </div>
-        </section>
-        <!-- END: Privacy Policy Section -->
-    </main>
-
-    <!-- BEGIN: MainFooter -->
-    <footer class="bg-brandBlack text-white py-12 px-6 border-t border-white/5 mt-auto">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-8 md:mb-0">
-                <img alt="SPDM Logo Footer" class="w-12 h-12" src="Assets/2.png" />
-            </div>
-            <div class="flex flex-col items-center md:items-end space-y-4">
-                <p class="text-xs tracking-widest text-gray-500">© 2026 SPDM STUDIO. ALL RIGHTS RESERVED.</p>
-                <div class="flex space-x-6 text-gray-400">
-                    <a class="text-xs hover:text-white transition-colors" href="https://github.com/SPDM-Studios" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a class="text-xs hover:text-white transition-colors" href="https://www.linkedin.com/company/spdm-studio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                </div>
-            </div>
+  <!-- OVERVIEW -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[01]</div>
+      <div class="head-row"><span class="id mono">// overview</span><h2>The <em>idea</em>.</h2><span class="tail mono">3 min read</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="twocol">
+          <div class="body-text">
+            <h3>Why we built it.</h3>
+            <p>Most scoreboard apps are stuffed with menus, ads, and rules engines for sports you'll never play. We wanted something that worked the same whether you're playing 21 in a driveway or running a six‑round tennis match — large numbers, two clear taps, no friction.</p>
+            <h3>The product.</h3>
+            <p>My Scoreboard is a single‑purpose Android app: pick a game template (or a blank one), pick teams, start. The dark UI keeps the score the focal point, the buttons are sized for fingers in motion, and undo is one swipe away. The app runs entirely on‑device — no account, no telemetry, no internet needed.</p>
+            <h3>The result.</h3>
+            <p>Live on Google Play, free to use, with a small freemium layer for power users who want custom game templates. A real product we use ourselves at every studio social.</p>
+          </div>
+          <aside class="side-meta">
+            <div class="row"><div class="k">Role</div><div class="v">UI / UX Design + App Development</div></div>
+            <div class="row"><div class="k">Platform</div><div class="v">Android (API 24+)</div></div>
+            <div class="row"><div class="k">Stack</div><div class="v">Kotlin · Jetpack Compose · Room</div></div>
+            <div class="row"><div class="k">Timeline</div><div class="v">2025 — present</div></div>
+            <div class="row"><div class="k">Pricing</div><div class="v">Free · Freemium</div></div>
+            <div class="row"><div class="k">Download</div><div class="v"><a href="https://play.google.com/store/apps/details?id=com.spdmstudio.myscoreboard&pcampaignid=web_share" target="_blank">Google Play Store →</a></div></div>
+          </aside>
         </div>
-    </footer>
-    <!-- END: MainFooter -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[02]</div>
+      <div class="head-row"><span class="id mono">// features</span><h2>What it <em>does</em>.</h2><span class="tail mono">06 highlights</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="feature-grid">
+          <div class="feature"><div class="ix">F.01</div><h4>Score‑first UI</h4><p>Two enormous tap targets. Numbers fill the screen. Visible from across a court.</p></div>
+          <div class="feature"><div class="ix">F.02</div><h4>Game templates</h4><p>Basketball, tennis, volleyball, ping pong — or a blank slate for backyard rules.</p></div>
+          <div class="feature"><div class="ix">F.03</div><h4>One‑swipe undo</h4><p>Tap wrong? Swipe back. The most-used button on the screen, intentionally.</p></div>
+          <div class="feature"><div class="ix">F.04</div><h4>Works offline</h4><p>No account, no network. Lives in airplane mode just fine.</p></div>
+          <div class="feature"><div class="ix">F.05</div><h4>History on device</h4><p>Past matches saved locally. Nothing leaves your phone.</p></div>
+          <div class="feature"><div class="ix">F.06</div><h4>Built for batteries</h4><p>OLED‑friendly dark theme · stays under 30MB · launches under a second.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[03]</div>
+      <div class="head-row"><span class="id mono">// legal</span><h2>Privacy <em>policy</em>.</h2><span class="tail mono">last updated · 22 feb 2026</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="privacy-list" style="max-width:80ch">
+          <p style="color:var(--fg);font-size:16px;line-height:1.65;font-weight:300">My Scoreboard is a free / freemium app provided as is. This page describes how the app handles information when you choose to use it.</p>
+
+          <h3><span class="ix">1.</span>Information collection & use</h3>
+          <p>The app does <strong style="color:var(--fg)">not</strong> require you to provide personally identifiable information. It runs locally on your device — we do not collect, store, or send personal data to external servers.</p>
+          <p>The app uses third‑party services (such as Google AdMob and Google Play Billing) that may collect anonymous device identifiers used to show relevant ads or process payments.</p>
+
+          <h3><span class="ix">2.</span>Log data</h3>
+          <p>If the app crashes, third‑party error reporting may collect anonymous information — IP address, device name, OS version, the app's configuration at the time, and the time of use — to help us diagnose the issue.</p>
+
+          <h3><span class="ix">3.</span>Cookies</h3>
+          <p>This app does not use cookies.</p>
+
+          <h3><span class="ix">4.</span>Service providers</h3>
+          <p>We may employ third‑party companies and individuals to:</p>
+          <ul>
+            <li>Facilitate our service;</li>
+            <li>Provide the service on our behalf;</li>
+            <li>Help us analyze how the service is used.</li>
+          </ul>
+
+          <h3><span class="ix">5.</span>Links to other sites</h3>
+          <p>The app does not contain links to other sites natively.</p>
+
+          <h3><span class="ix">6.</span>Children's privacy</h3>
+          <p>The app does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+
+          <h3><span class="ix">7.</span>Changes to this policy</h3>
+          <p>We may update this policy from time to time. We'll post any changes on this page — please review periodically.</p>
+
+          <h3><span class="ix">8.</span>Contact</h3>
+          <p>Questions or suggestions? Email <strong style="color:var(--accent)">spdmstudio@gmail.com</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[04]</div>
+      <div class="head-row"><span class="id mono">// next</span><h2>What's <em>next</em>.</h2></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+        <div>
+          <div class="mono" style="font-size:11px;color:var(--fg-3);letter-spacing:0.1em">// 02 / 04</div>
+          <div style="font-size:36px;font-weight:300;letter-spacing:-0.02em;margin-top:12px">More projects in flight →</div>
+        </div>
+        <a href="work.html" class="cta mono" style="border:1px solid var(--accent-dim);color:var(--accent);padding:14px 22px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:0.12em;text-transform:uppercase">Back to work index <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="frame" style="border-left:0;border-right:0;max-width:1440px">
+    <div class="foot-grid">
+      <div class="gut"></div>
+      <div class="brand-block"><div class="lg">SPDM<em>.</em></div><div class="desc">Software studio building small, durable products with care.</div></div>
+      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
+      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+  </div>
+</footer>
 </body>
 </html>

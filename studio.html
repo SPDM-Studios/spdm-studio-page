@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio — SPDM Studio</title>
+<link rel="icon" type="image/png" href="Assets/2.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+  .about-l p{font-size:18px;line-height:1.6;color:var(--fg);font-weight:300;margin-bottom:24px;max-width:48ch}
+  .about-l p.lead{font-size:26px;line-height:1.4}
+  .about-l p.lead em{color:var(--accent);font-style:italic;font-weight:400}
+  .about-r{border-left:1px solid var(--line);padding-left:48px;display:flex;flex-direction:column;gap:32px}
+  .stat{display:grid;grid-template-columns:90px 1fr;align-items:baseline;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+  .stat .num{font-family:'Inter',sans-serif;font-weight:300;font-size:64px;letter-spacing:-0.04em;line-height:1;color:var(--accent)}
+  .stat .lbl{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-2);text-transform:uppercase;letter-spacing:0.1em}
+  .stat .desc{grid-column:2;color:var(--fg-3);font-size:13px;font-weight:300;margin-top:6px}
+
+  .princ{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  .princ .p{padding:36px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .princ .p:nth-child(3n){border-right:0}
+  .princ .p .ix{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.12em;margin-bottom:18px}
+  .princ .p h4{font-family:'Inter',sans-serif;font-weight:400;font-size:22px;letter-spacing:-0.01em;margin-bottom:10px}
+  .princ .p p{color:var(--fg-2);font-size:14px;line-height:1.6;font-weight:300}
+
+  .team{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line)}
+  .person{padding:32px;border-right:1px solid var(--line);display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start}
+  .person:last-child{border-right:0}
+  .person .ph{width:80px;height:100px;background:linear-gradient(135deg, var(--bg-3), var(--bg-2));position:relative;overflow:hidden;border:1px solid var(--line)}
+  .person .ph::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 8px)}
+  .person .ph .init{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:300;font-size:32px;color:var(--accent);letter-spacing:-0.02em}
+  .person h4{font-family:'Inter',sans-serif;font-weight:400;font-size:20px;letter-spacing:-0.01em}
+  .person .role{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin:6px 0 14px}
+  .person p{color:var(--fg-2);font-size:13px;line-height:1.6;font-weight:300}
+
+  .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-bottom:0}
+  .stack-cell{padding:24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--fg-2);display:flex;flex-direction:column;gap:6px}
+  .stack-cell:nth-child(4n){border-right:0}
+  .stack-cell .k{color:var(--fg-3);font-size:10px;text-transform:uppercase;letter-spacing:0.1em}
+  .stack-cell .v{color:var(--fg);font-size:14px}
+
+  @media (max-width:960px){
+    .about-grid{grid-template-columns:1fr}
+    .about-r{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:32px}
+    .princ{grid-template-columns:1fr}
+    .princ .p{border-right:0}
+    .team{grid-template-columns:1fr}
+    .person{border-right:0;border-bottom:1px solid var(--line)}
+    .stack-grid{grid-template-columns:repeat(2,1fr)}
+    .stack-cell:nth-child(4n){border-right:1px solid var(--line)}
+    .stack-cell:nth-child(2n){border-right:0}
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="dot"></span><span class="name">SPDM</span><span class="tag mono">/studio</span></a>
+    <div class="links">
+      <a href="index.html">Index</a>
+      <a href="work.html">Work</a>
+      <a class="active" href="studio.html">Studio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+  </div>
+</nav>
+
+<div class="frame">
+
+  <section class="page-head">
+    <div class="ph-grid">
+      <aside class="hero-rail"><div class="rail-tick">S</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
+      <div class="ph-main">
+        <div class="breadcrumb mono"><span>~/spdm-studio</span><span class="sep">›</span><span class="cur">studio</span></div>
+        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em">
+          A small studio<br/>with a <span style="color:var(--accent);font-style:italic;font-weight:400">clear axis</span>.
+        </h1>
+        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch">
+          We're a hands‑on team designing and building software products. No pitch decks, no account managers — just clear scope, weekly demos, and code we'd be proud to ship under our own name.
+        </p>
+      </div>
+      <aside class="hero-rail right"><div class="rail-tick">N</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[01]</div>
+      <div class="head-row"><span class="id mono">// origin</span><h2>The <em>story</em>.</h2><span class="tail mono">est. 2024</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="about-grid">
+          <div class="about-l">
+            <p class="lead">SPDM started as a continuous‑learning project with one mission: <em>design and ship mobile apps people actually use</em>.</p>
+            <p>We pick small problems on purpose. Scoring a pickup game. Tracking a habit. Taking a note. Tools that live in the seams of someone's day, not in the spotlight.</p>
+            <p>Most of our work has shipped under our own name first. Each project is a chance to test an idea with the same craft we'd bring to a client product — because we are also our own client.</p>
+          </div>
+          <div class="about-r">
+            <div class="stat"><div class="num">04</div><div class="lbl mono">Apps in motion</div><div class="desc">Live, in build, or under prototype.</div></div>
+            <div class="stat"><div class="num">02</div><div class="lbl mono">Years of practice</div><div class="desc">Compounding craft, week by week.</div></div>
+            <div class="stat"><div class="num">∞</div><div class="lbl mono">Iterations welcome</div><div class="desc">v1 is the start, never the end.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[02]</div>
+      <div class="head-row"><span class="id mono">// principles</span><h2>How we <em>work</em>.</h2><span class="tail mono">06 axioms</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content" style="padding:0">
+        <div class="princ">
+          <div class="p"><div class="ix">P.01</div><h4>Code is the design.</h4><p>We prototype in real code on real devices. Figma is a sketchbook, not a destination.</p></div>
+          <div class="p"><div class="ix">P.02</div><h4>Ship weekly.</h4><p>Friday demos, Monday triage. Momentum compounds — so do small bugs.</p></div>
+          <div class="p"><div class="ix">P.03</div><h4>Default to less.</h4><p>Subtract a feature before adding one. Empty space is a feature.</p></div>
+          <div class="p"><div class="ix">P.04</div><h4>Earn the metaphor.</h4><p>Every animation, icon, and word should justify its weight in pixels.</p></div>
+          <div class="p"><div class="ix">P.05</div><h4>Own the seams.</h4><p>Loading states, errors, offline mode — the unglamorous places where trust is built.</p></div>
+          <div class="p"><div class="ix">P.06</div><h4>Build for the small scale.</h4><p>A handful of users who love a tool beats a million who tolerate it.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[03]</div>
+      <div class="head-row"><span class="id mono">// team</span><h2>The <em>humans</em>.</h2><span class="tail mono">02 people</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="team">
+          <div class="person">
+            <div class="ph"><div class="init">S·P</div></div>
+            <div>
+              <h4>S. Pérez</h4>
+              <div class="role mono">Design + Mobile</div>
+              <p>Designs the product, then builds it. Spends most days alternating between Figma and Android Studio. Quietly opinionated about typography.</p>
+            </div>
+          </div>
+          <div class="person">
+            <div class="ph"><div class="init">D·M</div></div>
+            <div>
+              <h4>D. Martín</h4>
+              <div class="role mono">Engineering + Backend</div>
+              <p>Owns the parts of the stack you don't see — APIs, infra, the boring reliable bits. Believes a good error message is a love letter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[04]</div>
+      <div class="head-row"><span class="id mono">// toolkit</span><h2>The <em>stack</em>.</h2><span class="tail mono">production-tested</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="stack-grid">
+          <div class="stack-cell"><span class="k">MOBILE</span><span class="v">Kotlin · Compose</span><span>Swift · SwiftUI</span></div>
+          <div class="stack-cell"><span class="k">CROSS</span><span class="v">Flutter</span><span>React Native</span></div>
+          <div class="stack-cell"><span class="k">WEB</span><span class="v">TypeScript · React</span><span>Astro · Tailwind</span></div>
+          <div class="stack-cell"><span class="k">BACKEND</span><span class="v">Node · Postgres</span><span>Edge runtimes</span></div>
+          <div class="stack-cell"><span class="k">DESIGN</span><span class="v">Figma · Tokens</span><span>Storybook</span></div>
+          <div class="stack-cell"><span class="k">CI / CD</span><span class="v">GitHub Actions</span><span>Fastlane</span></div>
+          <div class="stack-cell"><span class="k">ANALYTICS</span><span class="v">Plausible · PostHog</span><span>Sentry</span></div>
+          <div class="stack-cell"><span class="k">RUNS ON</span><span class="v">Coffee · curiosity</span><span>Friday demos</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="frame" style="border-left:0;border-right:0;max-width:1440px">
+    <div class="foot-grid">
+      <div class="gut"></div>
+      <div class="brand-block"><div class="lg">SPDM<em>.</em></div><div class="desc">Software studio building small, durable products with care.</div></div>
+      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
+      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+  </div>
+</footer>
+</body>
+</html>

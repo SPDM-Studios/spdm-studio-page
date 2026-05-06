@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — SPDM Studio</title>
+<link rel="icon" type="image/png" href="Assets/2.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+  .contact-l{padding:56px;border-right:1px solid var(--line)}
+  .contact-l h3{font-family:'Inter',sans-serif;font-weight:300;font-size:56px;letter-spacing:-0.02em;line-height:1;margin-bottom:22px}
+  .contact-l h3 em{color:var(--accent);font-style:italic;font-weight:400}
+  .contact-l p{color:var(--fg-2);font-size:16px;line-height:1.65;font-weight:300;margin-bottom:36px;max-width:42ch}
+  .channels{display:flex;flex-direction:column;gap:0;font-family:'JetBrains Mono',monospace;font-size:13px;border-top:1px solid var(--line)}
+  .channels a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+  .channels a:hover span:last-child{color:var(--accent)}
+  .channels a span:first-child{color:var(--fg-3);text-transform:uppercase;letter-spacing:0.1em;font-size:11px}
+  .channels a span:last-child{color:var(--fg);transition:color .2s}
+  .contact-r{padding:56px;background:var(--bg-2)}
+  .field{margin-bottom:24px}
+  .field label{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+  .field label .req{color:var(--accent)}
+  .field input,.field textarea,.field select{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--fg);font-family:'JetBrains Mono',monospace;font-size:14px;padding:14px 16px;border-radius:2px;outline:none;transition:border .2s}
+  .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent)}
+  .field textarea{resize:vertical;min-height:140px;font-family:'Inter',sans-serif;font-weight:300;font-size:15px;line-height:1.5}
+  .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt label{display:block;border:1px solid var(--line);padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--fg-2);text-transform:uppercase;letter-spacing:0.06em;cursor:pointer;transition:all .2s;text-align:center}
+  .opt input:checked + label{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+  .send{width:100%;background:var(--accent);color:#000;border:0;padding:18px 24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-radius:2px;margin-top:8px}
+  .send:hover{background:#fff}
+  .faq{display:flex;flex-direction:column}
+  .faq details{border-bottom:1px solid var(--line);padding:24px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;font-weight:300;font-size:22px;letter-spacing:-0.01em}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:20px;transition:transform .2s}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--fg-2);font-size:15px;line-height:1.6;font-weight:300;margin-top:16px;max-width:64ch}
+
+  @media (max-width:960px){
+    .contact{grid-template-columns:1fr}
+    .contact-l{border-right:0;border-bottom:1px solid var(--line);padding:32px}
+    .contact-r{padding:32px}
+    .opts{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="index.html"><span class="dot"></span><span class="name">SPDM</span><span class="tag mono">/studio</span></a>
+    <div class="links">
+      <a href="index.html">Index</a>
+      <a href="work.html">Work</a>
+      <a href="studio.html">Studio</a>
+      <a class="active" href="contact.html">Contact</a>
+    </div>
+    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+  </div>
+</nav>
+
+<div class="frame">
+
+  <section class="page-head">
+    <div class="ph-grid">
+      <aside class="hero-rail"><div class="rail-tick">C</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
+      <div class="ph-main">
+        <div class="breadcrumb mono"><span>~/spdm-studio</span><span class="sep">›</span><span class="cur">contact</span></div>
+        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em">
+          Send a brief.<br/>Get a real <span style="color:var(--accent);font-style:italic;font-weight:400">reply</span>.
+        </h1>
+        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch">
+          Tell us what you're building and where it's stuck. We read every message and answer with a real human, usually within two days.
+        </p>
+      </div>
+      <aside class="hero-rail right"><div class="rail-tick">≤48h</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[01]</div>
+      <div class="head-row"><span class="id mono">// brief</span><h2>The <em>form</em>.</h2><span class="tail mono">~2 minutes</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="contact">
+          <div class="contact-l">
+            <h3>Real humans on the<br/>other <em>side</em>.</h3>
+            <p>If your project doesn't fit our calendar, we'll say so honestly and point you somewhere good. No "circle back" energy.</p>
+            <div class="channels mono">
+              <a href="mailto:spdmstudio@gmail.com"><span>EMAIL</span><span>spdmstudio@gmail.com →</span></a>
+              <a href="https://github.com/SPDM-Studios" target="_blank"><span>GITHUB</span><span>@SPDM-Studios →</span></a>
+              <a href="https://www.linkedin.com/company/spdm-studio" target="_blank"><span>LINKEDIN</span><span>SPDM Studio →</span></a>
+              <a href="#"><span>RESPONSE</span><span style="color:var(--accent)">≤ 48h on weekdays</span></a>
+            </div>
+          </div>
+          <div class="contact-r">
+            <form id="contactForm" action="https://formsubmit.co/spdmstudio@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New brief from SPDM Studio site" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="field">
+                <label><span>NAME</span><span class="req">required</span></label>
+                <input name="name" type="text" placeholder="Jane Cooper" required />
+              </div>
+              <div class="field">
+                <label><span>EMAIL</span><span class="req">required</span></label>
+                <input name="email" type="email" placeholder="jane@studio.co" required />
+              </div>
+              <div class="field">
+                <label><span>PROJECT TYPE</span><span>pick one</span></label>
+                <div class="opts">
+                  <div class="opt"><input type="radio" name="type" id="t1" value="mobile" checked /><label for="t1">Mobile App</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t2" value="web" /><label for="t2">Web / Site</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t3" value="design" /><label for="t3">Design System</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t4" value="other" /><label for="t4">Something Else</label></div>
+                </div>
+              </div>
+              <div class="field">
+                <label><span>BUDGET BAND</span><span>optional</span></label>
+                <div class="opts">
+                  <div class="opt"><input type="radio" name="budget" id="b1" value="lt15" /><label for="b1">&lt; €15k</label></div>
+                  <div class="opt"><input type="radio" name="budget" id="b2" value="15-40" /><label for="b2">€15–40k</label></div>
+                  <div class="opt"><input type="radio" name="budget" id="b3" value="40-100" /><label for="b3">€40–100k</label></div>
+                  <div class="opt"><input type="radio" name="budget" id="b4" value="discuss" /><label for="b4">Let's talk</label></div>
+                </div>
+              </div>
+              <div class="field">
+                <label><span>BRIEF</span><span>≤ 600 chars</span></label>
+                <textarea name="message" rows="5" placeholder="A short description of what you'd like to build, who it's for, and the timeline you're hoping for." required></textarea>
+              </div>
+              <button class="send mono" type="submit"><span>Send brief</span><span>→</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="block-head">
+      <div class="num mono">[02]</div>
+      <div class="head-row"><span class="id mono">// faq</span><h2>Quick <em>answers</em>.</h2><span class="tail mono">04 questions</span></div>
+    </div>
+    <div class="block-body">
+      <div class="gutter"></div>
+      <div class="content">
+        <div class="faq">
+          <details open>
+            <summary>How long does a typical project take?</summary>
+            <p>Six to fourteen weeks for an initial release, depending on scope. We bias toward shipping a small, real version early — then iterating in 2‑week cycles after launch.</p>
+          </details>
+          <details>
+            <summary>Do you take on equity or partnership work?</summary>
+            <p>Occasionally. We're picky about it — usually only when we'd build the product anyway. If that's you, mention it in the brief.</p>
+          </details>
+          <details>
+            <summary>What does the engagement look like day‑to‑day?</summary>
+            <p>Weekly Friday demos with a real build, a shared Linear board, and async updates the rest of the time. You'll have direct contact with the people writing the code.</p>
+          </details>
+          <details>
+            <summary>Can you maintain the product after launch?</summary>
+            <p>Yes — we offer a light retainer for tracked metrics, monthly polish, and feedback loops. Or we'll hand off cleanly to your team.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="frame" style="border-left:0;border-right:0;max-width:1440px">
+    <div class="foot-grid">
+      <div class="gut"></div>
+      <div class="brand-block"><div class="lg">SPDM<em>.</em></div><div class="desc">Software studio building small, durable products with care.</div></div>
+      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
+      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const btn = form.querySelector('button.send');
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<span>Sending…</span><span>↻</span>';
+      const fd = new FormData(form);
+      fetch("https://formsubmit.co/ajax/spdmstudio@gmail.com",{method:"POST",body:fd})
+        .then(r=>r.json())
+        .then(()=>{btn.innerHTML='<span>Sent — talk soon</span><span>✓</span>';form.reset();})
+        .catch(()=>{btn.innerHTML='<span>Error — try email</span><span>✕</span>';})
+        .finally(()=>setTimeout(()=>btn.innerHTML=orig,4500));
+    });
+  }
+</script>
+</body>
+</html>
