@@ -21,12 +21,13 @@
       <span class="tag mono">/studio</span>
     </a>
     <div class="links">
-      <a href="index.html">Index</a>
-      <a class="active" href="work.html">Work</a>
-      <a href="studio.html">Studio</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a class="active" href="work.html" data-i18n="nav_work">Work</a>
+      <a href="studio.html" data-i18n="nav_studio">Studio</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
-    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+    <button class="lang-toggle mono" id="langToggle" onclick="i18n.toggle()">ES</button>
+    <div class="meta mono"><span class="pulse"></span><span data-i18n="nav_status">OPEN FOR Q3 · 26</span></div>
   </div>
 </nav>
 
@@ -46,18 +47,18 @@
           <span>~/spdm-studio</span><span class="sep">›</span>
           <span class="cur">work</span>
         </div>
-        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em">
+        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em" data-i18n-html="wrk_hero_h1">
           Selected <span style="color:var(--accent);font-style:italic;font-weight:400">work</span>,<br/>
-          shipped & in&nbsp;flight.
+          shipped &amp; in&nbsp;flight.
         </h1>
-        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch">
+        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch" data-i18n="wrk_hero_p">
           Most of what we make is small on purpose. Each project below is a tool we'd want on our own phone — built with the same care we'd give a client product, because we are the client too.
         </p>
         <div style="margin-top:36px;display:flex;gap:18px;flex-wrap:wrap">
           <span class="chip mono">04 total</span>
           <span class="chip mono">01 live</span>
-          <span class="chip mono accent">01 in build</span>
-          <span class="chip mono">02 concept</span>
+          <span class="chip mono accent" data-i18n="wrk_chip_build">01 in build</span>
+          <span class="chip mono" data-i18n="wrk_chip_concept">02 concept</span>
         </div>
       </div>
       <aside class="hero-rail right">
@@ -74,9 +75,9 @@
     <div class="block-head">
       <div class="num mono">[01]</div>
       <div class="head-row">
-        <span class="id mono">// case_001 · live</span>
-        <h2>My <em>Scoreboard</em>.</h2>
-        <span class="tail mono">2026 · android</span>
+        <span class="id mono" data-i18n="wrk_s01_id">// case_001 · live</span>
+        <h2 data-i18n-html="wrk_s01_h2">My <em>Scoreboard</em>.</h2>
+        <span class="tail mono" data-i18n="wrk_s01_tail">2026 · android</span>
       </div>
     </div>
     <div class="block-body">
@@ -93,15 +94,15 @@
             <div class="top">
               <div class="id mono"><span>CASE 01 / 04</span><span>2026</span></div>
               <h3>My Scoreboard</h3>
-              <p class="lead">A clean, dark‑themed scoreboard for any sport or backyard game. Designed to disappear so the score takes over the room.</p>
+              <p class="lead" data-i18n="wrk_scoreboard_lead">A clean, dark‑themed scoreboard for any sport or backyard game. Designed to disappear so the score takes over the room.</p>
             </div>
             <div class="specs">
-              <div class="row"><div class="k">Role</div><div class="v">Design + Build</div></div>
-              <div class="row"><div class="k">Platform</div><div class="v">Android</div></div>
-              <div class="row"><div class="k">Stack</div><div class="v">Kotlin · Compose</div></div>
-              <div class="row"><div class="k">Status</div><div class="v" style="color:var(--accent)">● Live on Play</div></div>
+              <div class="row"><div class="k" data-i18n="wrk_k_role">Role</div><div class="v">Design + Build</div></div>
+              <div class="row"><div class="k" data-i18n="wrk_k_platform">Platform</div><div class="v">Android</div></div>
+              <div class="row"><div class="k" data-i18n="wrk_k_stack">Stack</div><div class="v">Kotlin · Compose</div></div>
+              <div class="row"><div class="k" data-i18n="wrk_k_status">Status</div><div class="v" style="color:var(--accent)">● Live on Play</div></div>
             </div>
-            <span class="cta mono">Open case study <span class="arrow">→</span></span>
+            <span class="cta mono" data-i18n-html="wrk_cta">Open case study <span class="arrow">→</span></span>
           </div>
         </a>
       </div>
@@ -113,9 +114,9 @@
     <div class="block-head">
       <div class="num mono">[02]</div>
       <div class="head-row">
-        <span class="id mono">// in_flight</span>
-        <h2>Currently <em>in flight</em>.</h2>
-        <span class="tail mono">03 active</span>
+        <span class="id mono" data-i18n="wrk_s02_id">// in_flight</span>
+        <h2 data-i18n-html="wrk_s02_h2">Currently <em>in flight</em>.</h2>
+        <span class="tail mono" data-i18n="wrk_s02_tail">03 active</span>
       </div>
     </div>
     <div class="block-body">
@@ -124,22 +125,22 @@
         <div class="proj-list">
           <div class="row">
             <span class="idx">02 /</span>
-            <span class="ttl">Untitled iOS Productivity Tool</span>
-            <span class="desc">Focus timer + task triage</span>
+            <span class="ttl" data-i18n="wrk_proj2_ttl">Untitled iOS Productivity Tool</span>
+            <span class="desc" data-i18n="wrk_proj2_desc">Focus timer + task triage</span>
             <span class="yr">2026</span>
             <span class="stage">▸ IN BUILD</span>
           </div>
           <div class="row">
             <span class="idx">03 /</span>
-            <span class="ttl">Studio Internals — Tokens API</span>
-            <span class="desc">Design token sync engine</span>
+            <span class="ttl" data-i18n="wrk_proj3_ttl">Studio Internals — Tokens API</span>
+            <span class="desc" data-i18n="wrk_proj3_desc">Design token sync engine</span>
             <span class="yr">2026</span>
             <span class="stage">▸ R&D</span>
           </div>
           <div class="row">
             <span class="idx">04 /</span>
-            <span class="ttl">Field Notes — Mobile Journal</span>
-            <span class="desc">Markdown-first daily log</span>
+            <span class="ttl" data-i18n="wrk_proj4_ttl">Field Notes — Mobile Journal</span>
+            <span class="desc" data-i18n="wrk_proj4_desc">Markdown-first daily log</span>
             <span class="yr">Q4 · 26</span>
             <span class="stage dim">▸ CONCEPT</span>
           </div>
@@ -148,9 +149,9 @@
         <div style="margin-top:48px;border:1px dashed var(--line-2);padding:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
           <div>
             <div class="mono" style="font-size:11px;color:var(--fg-3);letter-spacing:0.1em">// HAVE A BRIEF?</div>
-            <div style="font-size:22px;font-weight:300;margin-top:8px">We're booking one new project for Q3 2026.</div>
+            <div style="font-size:22px;font-weight:300;margin-top:8px" data-i18n="wrk_booking">We're booking one new project for Q3 2026.</div>
           </div>
-          <a href="contact.html" class="cta mono" style="border:1px solid var(--accent-dim);color:var(--accent);padding:14px 22px;display:inline-flex;gap:10px;align-items:center">Send a brief <span>→</span></a>
+          <a href="contact.html" class="cta mono" style="border:1px solid var(--accent-dim);color:var(--accent);padding:14px 22px;display:inline-flex;gap:10px;align-items:center"><span data-i18n="wrk_send_brief">Send a brief</span> <span>→</span></a>
         </div>
       </div>
     </div>
@@ -166,12 +167,13 @@
         <div class="lg">SPDM<em>.</em></div>
         <div class="desc">Software studio building small, durable products with care.</div>
       </div>
-      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
-      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
-      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+      <div><h5 data-i18n="foot_nav_title">Studio</h5><a href="index.html" data-i18n="foot_home">Home</a><a href="work.html" data-i18n="nav_work">Work</a><a href="studio.html" data-i18n="nav_studio">Studio</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
+      <div><h5 data-i18n="foot_elsewhere">Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5 data-i18n="foot_touch">Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+    <div class="foot-bottom"><span data-i18n="foot_copyright">© 2026 SPDM STUDIO</span><span data-i18n="foot_version">v0.4.2</span></div>
   </div>
 </footer>
+<script src="i18n.js"></script>
 </body>
 </html>

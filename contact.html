@@ -57,12 +57,13 @@
   <div class="inner">
     <a class="brand" href="index.html"><span class="dot"></span><span class="name">SPDM</span><span class="tag mono">/studio</span></a>
     <div class="links">
-      <a href="index.html">Index</a>
-      <a href="work.html">Work</a>
-      <a href="studio.html">Studio</a>
-      <a class="active" href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="work.html" data-i18n="nav_work">Work</a>
+      <a href="studio.html" data-i18n="nav_studio">Studio</a>
+      <a class="active" href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
-    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+    <button class="lang-toggle mono" id="langToggle" onclick="i18n.toggle()">ES</button>
+    <div class="meta mono"><span class="pulse"></span><span data-i18n="nav_status">OPEN FOR Q3 · 26</span></div>
   </div>
 </nav>
 
@@ -73,10 +74,10 @@
       <aside class="hero-rail"><div class="rail-tick">C</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
       <div class="ph-main">
         <div class="breadcrumb mono"><span>~/spdm-studio</span><span class="sep">›</span><span class="cur">contact</span></div>
-        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em">
+        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em" data-i18n-html="cnt_hero_h1">
           Send a brief.<br/>Get a real <span style="color:var(--accent);font-style:italic;font-weight:400">reply</span>.
         </h1>
-        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch">
+        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch" data-i18n="cnt_hero_p">
           Tell us what you're building and where it's stuck. We read every message and answer with a real human, usually within two days.
         </p>
       </div>
@@ -87,15 +88,15 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[01]</div>
-      <div class="head-row"><span class="id mono">// brief</span><h2>The <em>form</em>.</h2><span class="tail mono">~2 minutes</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="cnt_s01_id">// brief</span><h2 data-i18n-html="cnt_s01_h2">The <em>form</em>.</h2><span class="tail mono" data-i18n="cnt_s01_tail">~2 minutes</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
       <div class="content">
         <div class="contact">
           <div class="contact-l">
-            <h3>Real humans on the<br/>other <em>side</em>.</h3>
-            <p>If your project doesn't fit our calendar, we'll say so honestly and point you somewhere good. No "circle back" energy.</p>
+            <h3 data-i18n-html="cnt_l_h3">Real humans on the<br/>other <em>side</em>.</h3>
+            <p data-i18n="cnt_l_p">If your project doesn't fit our calendar, we'll say so honestly and point you somewhere good. No "circle back" energy.</p>
             <div class="channels mono">
               <a href="mailto:spdmstudio@gmail.com"><span>EMAIL</span><span>spdmstudio@gmail.com →</span></a>
               <a href="https://github.com/SPDM-Studios" target="_blank"><span>GITHUB</span><span>@SPDM-Studios →</span></a>
@@ -108,24 +109,24 @@
               <input type="hidden" name="_subject" value="New brief from SPDM Studio site" />
               <input type="hidden" name="_captcha" value="false" />
               <div class="field">
-                <label><span>NAME</span><span class="req">required</span></label>
-                <input name="name" type="text" placeholder="Jane Cooper" required />
+                <label><span data-i18n="cnt_form_name">NAME</span><span class="req" data-i18n="cnt_form_required">required</span></label>
+                <input name="name" type="text" placeholder="Jane Cooper" data-i18n-placeholder="idx_form_name_ph" required />
               </div>
               <div class="field">
-                <label><span>EMAIL</span><span class="req">required</span></label>
-                <input name="email" type="email" placeholder="jane@studio.co" required />
+                <label><span data-i18n="cnt_form_email">EMAIL</span><span class="req" data-i18n="cnt_form_required">required</span></label>
+                <input name="email" type="email" placeholder="jane@studio.co" data-i18n-placeholder="idx_form_email_ph" required />
               </div>
               <div class="field">
-                <label><span>PROJECT TYPE</span><span>pick one</span></label>
+                <label><span data-i18n="cnt_form_type">PROJECT TYPE</span><span data-i18n="cnt_form_type_pick">pick one</span></label>
                 <div class="opts">
-                  <div class="opt"><input type="radio" name="type" id="t1" value="mobile" checked /><label for="t1">Mobile App</label></div>
-                  <div class="opt"><input type="radio" name="type" id="t2" value="web" /><label for="t2">Web / Site</label></div>
-                  <div class="opt"><input type="radio" name="type" id="t3" value="design" /><label for="t3">Design System</label></div>
-                  <div class="opt"><input type="radio" name="type" id="t4" value="other" /><label for="t4">Something Else</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t1" value="mobile" checked /><label for="t1" data-i18n="cnt_opt_mobile">Mobile App</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t2" value="web" /><label for="t2" data-i18n="cnt_opt_web">Web / Site</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t3" value="design" /><label for="t3" data-i18n="cnt_opt_design">Design System</label></div>
+                  <div class="opt"><input type="radio" name="type" id="t4" value="other" /><label for="t4" data-i18n="cnt_opt_other">Something Else</label></div>
                 </div>
               </div>
               <div class="field">
-                <label><span>BUDGET BAND</span><span>optional</span></label>
+                <label><span data-i18n="cnt_form_budget">BUDGET BAND</span><span data-i18n="cnt_form_budget_opt">optional</span></label>
                 <div class="opts">
                   <div class="opt"><input type="radio" name="budget" id="b1" value="lt15" /><label for="b1">&lt; €15k</label></div>
                   <div class="opt"><input type="radio" name="budget" id="b2" value="15-40" /><label for="b2">€15–40k</label></div>
@@ -134,10 +135,10 @@
                 </div>
               </div>
               <div class="field">
-                <label><span>BRIEF</span><span>≤ 600 chars</span></label>
-                <textarea name="message" rows="5" placeholder="A short description of what you'd like to build, who it's for, and the timeline you're hoping for." required></textarea>
+                <label><span data-i18n="cnt_form_brief">BRIEF</span><span>≤ 600 chars</span></label>
+                <textarea name="message" rows="5" placeholder="A short description of what you'd like to build, who it's for, and the timeline you're hoping for." data-i18n-placeholder="idx_form_brief_ph" required></textarea>
               </div>
-              <button class="send mono" type="submit"><span>Send brief</span><span>→</span></button>
+              <button class="send mono" type="submit"><span data-i18n="cnt_send">Send brief</span><span>→</span></button>
             </form>
           </div>
         </div>
@@ -149,27 +150,27 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[02]</div>
-      <div class="head-row"><span class="id mono">// faq</span><h2>Quick <em>answers</em>.</h2><span class="tail mono">04 questions</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="cnt_s02_id">// faq</span><h2 data-i18n-html="cnt_s02_h2">Quick <em>answers</em>.</h2><span class="tail mono" data-i18n="cnt_s02_tail">04 questions</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
       <div class="content">
         <div class="faq">
           <details open>
-            <summary>How long does a typical project take?</summary>
-            <p>Six to fourteen weeks for an initial release, depending on scope. We bias toward shipping a small, real version early — then iterating in 2‑week cycles after launch.</p>
+            <summary data-i18n="cnt_faq1_q">How long does a typical project take?</summary>
+            <p data-i18n="cnt_faq1_a">Six to fourteen weeks for an initial release, depending on scope. We bias toward shipping a small, real version early — then iterating in 2‑week cycles after launch.</p>
           </details>
           <details>
-            <summary>Do you take on equity or partnership work?</summary>
-            <p>Occasionally. We're picky about it — usually only when we'd build the product anyway. If that's you, mention it in the brief.</p>
+            <summary data-i18n="cnt_faq2_q">Do you take on equity or partnership work?</summary>
+            <p data-i18n="cnt_faq2_a">Occasionally. We're picky about it — usually only when we'd build the product anyway. If that's you, mention it in the brief.</p>
           </details>
           <details>
-            <summary>What does the engagement look like day‑to‑day?</summary>
-            <p>Weekly Friday demos with a real build, a shared Linear board, and async updates the rest of the time. You'll have direct contact with the people writing the code.</p>
+            <summary data-i18n="cnt_faq3_q">What does the engagement look like day‑to‑day?</summary>
+            <p data-i18n="cnt_faq3_a">Weekly Friday demos with a real build, a shared Linear board, and async updates the rest of the time. You'll have direct contact with the people writing the code.</p>
           </details>
           <details>
-            <summary>Can you maintain the product after launch?</summary>
-            <p>Yes — we offer a light retainer for tracked metrics, monthly polish, and feedback loops. Or we'll hand off cleanly to your team.</p>
+            <summary data-i18n="cnt_faq4_q">Can you maintain the product after launch?</summary>
+            <p data-i18n="cnt_faq4_a">Yes — we offer a light retainer for tracked metrics, monthly polish, and feedback loops. Or we'll hand off cleanly to your team.</p>
           </details>
         </div>
       </div>
@@ -183,14 +184,15 @@
     <div class="foot-grid">
       <div class="gut"></div>
       <div class="brand-block"><div class="lg">SPDM<em>.</em></div><div class="desc">Software studio building small, durable products with care.</div></div>
-      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
-      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
-      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+      <div><h5 data-i18n="foot_nav_title">Studio</h5><a href="index.html" data-i18n="foot_home">Home</a><a href="work.html" data-i18n="nav_work">Work</a><a href="studio.html" data-i18n="nav_studio">Studio</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
+      <div><h5 data-i18n="foot_elsewhere">Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5 data-i18n="foot_touch">Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+    <div class="foot-bottom"><span data-i18n="foot_copyright">© 2026 SPDM STUDIO</span><span data-i18n="foot_version">v0.4.2</span></div>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   const form = document.getElementById('contactForm');
   if(form){

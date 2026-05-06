@@ -62,6 +62,8 @@
   nav.top .meta{padding:14px 22px;border-left:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-3);display:flex;align-items:center;gap:8px}
   nav.top .meta .pulse{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.6s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .lang-toggle{padding:14px 16px;border-left:1px solid var(--line);border-top:0;border-right:0;border-bottom:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;background:transparent;color:var(--fg-2);cursor:pointer;display:flex;align-items:center;transition:color .2s,background .2s}
+  .lang-toggle:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
 
   /* HERO */
   .hero{padding:120px 0 0;position:relative}
@@ -258,14 +260,15 @@
       <span class="tag mono">/studio</span>
     </a>
     <div class="links">
-      <a class="active" href="index.html">Index</a>
-      <a href="work.html">Work</a>
-      <a href="studio.html">Studio</a>
-      <a href="contact.html">Contact</a>
+      <a class="active" href="index.html" data-i18n="nav_home">Home</a>
+      <a href="work.html" data-i18n="nav_work">Work</a>
+      <a href="studio.html" data-i18n="nav_studio">Studio</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
+    <button class="lang-toggle mono" id="langToggle" onclick="i18n.toggle()">ES</button>
     <div class="meta mono">
       <span class="pulse"></span>
-      <span>OPEN FOR Q3 · 26</span>
+      <span data-i18n="nav_status">OPEN FOR Q3 · 26</span>
     </div>
   </div>
 </nav>
@@ -294,14 +297,14 @@
           <span class="cur">v0.4.2</span>
         </div>
 
-        <h1>
+        <h1 data-i18n-html="idx_hero_h1">
           We build<br/>
           <span class="accent">software</span> that<br/>
           <span class="strike">looks</span> works<br/>
           beautifully.
         </h1>
 
-        <p style="max-width:52ch;color:var(--fg-2);font-size:18px;line-height:1.6;font-weight:300;margin-top:32px">
+        <p style="max-width:52ch;color:var(--fg-2);font-size:18px;line-height:1.6;font-weight:300;margin-top:32px" data-i18n="idx_hero_p">
           SPDM is a small software studio crafting mobile and web products with care.
           We treat code as design — and design as code — turning everyday utilities
           into things people actually keep on their home screen.
@@ -309,16 +312,16 @@
 
         <div class="hero-meta">
           <div class="cell">
-            <div class="lbl mono">Founded</div>
+            <div class="lbl mono" data-i18n="idx_meta_founded">Founded</div>
             <div class="val mono">2024 — <span class="acc">PRESENT</span></div>
           </div>
           <div class="cell">
-            <div class="lbl mono">Status</div>
-            <div class="val mono"><span class="acc">●</span> Available · Q3 2026</div>
+            <div class="lbl mono" data-i18n="idx_meta_status_lbl">Status</div>
+            <div class="val mono" data-i18n-html="idx_meta_available"><span class="acc">●</span> Available · Q3 2026</div>
           </div>
           <div class="cell">
-            <div class="lbl mono">Index</div>
-            <div class="val mono">01 PROJECT · 03 IN PROGRESS</div>
+            <div class="lbl mono" data-i18n="idx_meta_index_lbl">Index</div>
+            <div class="val mono" data-i18n="idx_meta_projects">01 PROJECT · 03 IN PROGRESS</div>
           </div>
         </div>
       </main>
@@ -358,9 +361,9 @@
     <div class="block-head">
       <div class="num mono">[01]</div>
       <div class="head-row">
-        <span class="id mono">// services</span>
-        <h2>What we <em>build</em>.</h2>
-        <span class="tail mono">04 capabilities</span>
+        <span class="id mono" data-i18n="idx_s01_id">// services</span>
+        <h2 data-i18n-html="idx_s01_h2">What we <em>build</em>.</h2>
+        <span class="tail mono" data-i18n="idx_s01_tail">04 capabilities</span>
       </div>
     </div>
     <div class="block-body">
@@ -369,32 +372,32 @@
         <div class="services">
           <div class="service">
             <div class="num mono">01.01 <span class="tag">core</span></div>
-            <h3>Mobile Applications</h3>
-            <p>Native and cross‑platform apps for Android & iOS. We sweat the empty states, the offline mode, and the 3am edge cases.</p>
+            <h3 data-i18n="idx_srv01_h3">Mobile Applications</h3>
+            <p data-i18n="idx_srv01_p">Native and cross‑platform apps for Android & iOS. We sweat the empty states, the offline mode, and the 3am edge cases.</p>
             <div class="stack mono">
               <span>Kotlin</span><span>Swift</span><span>Flutter</span><span>Jetpack</span>
             </div>
           </div>
           <div class="service">
             <div class="num mono">01.02 <span class="tag">core</span></div>
-            <h3>Product Design</h3>
-            <p>Interface and interaction design rooted in real user flows. We prototype in code, not just Figma.</p>
+            <h3 data-i18n="idx_srv02_h3">Product Design</h3>
+            <p data-i18n="idx_srv02_p">Interface and interaction design rooted in real user flows. We prototype in code, not just Figma.</p>
             <div class="stack mono">
               <span>Figma</span><span>Tokens</span><span>Motion</span><span>A11y</span>
             </div>
           </div>
           <div class="service">
             <div class="num mono">01.03</div>
-            <h3>Web & Backend</h3>
-            <p>Marketing sites, dashboards, and the APIs that feed them. Boring infrastructure done right.</p>
+            <h3 data-i18n="idx_srv03_h3">Web & Backend</h3>
+            <p data-i18n="idx_srv03_p">Marketing sites, dashboards, and the APIs that feed them. Boring infrastructure done right.</p>
             <div class="stack mono">
               <span>Node</span><span>Postgres</span><span>Edge</span><span>TS</span>
             </div>
           </div>
           <div class="service">
             <div class="num mono">01.04</div>
-            <h3>Design Systems</h3>
-            <p>From color tokens to component libraries — the connective tissue that lets a small team ship like a big one.</p>
+            <h3 data-i18n="idx_srv04_h3">Design Systems</h3>
+            <p data-i18n="idx_srv04_p">From color tokens to component libraries — the connective tissue that lets a small team ship like a big one.</p>
             <div class="stack mono">
               <span>Tokens</span><span>Storybook</span><span>Docs</span><span>Lint</span>
             </div>
@@ -409,9 +412,9 @@
     <div class="block-head">
       <div class="num mono">[02]</div>
       <div class="head-row">
-        <span class="id mono">// selected work</span>
-        <h2>Things we <em>shipped</em>.</h2>
-        <a href="work.html" class="tail mono" style="color:var(--accent)">view all →</a>
+        <span class="id mono" data-i18n="idx_s02_id">// selected work</span>
+        <h2 data-i18n-html="idx_s02_h2">Things we <em>shipped</em>.</h2>
+        <a href="work.html" class="tail mono" style="color:var(--accent)" data-i18n="idx_s02_viewall">view all →</a>
       </div>
     </div>
     <div class="block-body">
@@ -429,37 +432,37 @@
             <div class="top">
               <div class="id mono"><span>CASE 01 / 04</span><span>2026</span></div>
               <h3>My Scoreboard</h3>
-              <p class="lead">A clean, dark‑themed scoreboard for any sport or backyard game. Designed to disappear so the score can take over the room.</p>
+              <p class="lead" data-i18n="idx_scoreboard_lead">A clean, dark‑themed scoreboard for any sport or backyard game. Designed to disappear so the score can take over the room.</p>
             </div>
             <div class="specs">
-              <div class="row"><div class="k">Role</div><div class="v">Design + Build</div></div>
-              <div class="row"><div class="k">Platform</div><div class="v">Android</div></div>
-              <div class="row"><div class="k">Stack</div><div class="v">Kotlin · Compose</div></div>
-              <div class="row"><div class="k">Status</div><div class="v" style="color:var(--accent)">● Live on Play</div></div>
+              <div class="row"><div class="k" data-i18n="idx_k_role">Role</div><div class="v">Design + Build</div></div>
+              <div class="row"><div class="k" data-i18n="idx_k_platform">Platform</div><div class="v">Android</div></div>
+              <div class="row"><div class="k" data-i18n="idx_k_stack">Stack</div><div class="v">Kotlin · Compose</div></div>
+              <div class="row"><div class="k" data-i18n="idx_k_status">Status</div><div class="v" style="color:var(--accent)">● Live on Play</div></div>
             </div>
-            <span class="cta mono">Open case study <span class="arrow">→</span></span>
+            <span class="cta mono" data-i18n-html="idx_work_cta">Open case study <span class="arrow">→</span></span>
           </div>
         </a>
 
         <div class="proj-list">
           <div class="row">
             <span class="idx">02 /</span>
-            <span class="ttl">Untitled iOS Productivity Tool</span>
-            <span class="desc">Focus timer + task triage</span>
+            <span class="ttl" data-i18n="idx_proj2_ttl">Untitled iOS Productivity Tool</span>
+            <span class="desc" data-i18n="idx_proj2_desc">Focus timer + task triage</span>
             <span class="yr">2026</span>
             <span class="stage">▸ IN BUILD</span>
           </div>
           <div class="row">
             <span class="idx">03 /</span>
-            <span class="ttl">Studio Internals — Tokens API</span>
-            <span class="desc">Design token sync engine</span>
+            <span class="ttl" data-i18n="idx_proj3_ttl">Studio Internals — Tokens API</span>
+            <span class="desc" data-i18n="idx_proj3_desc">Design token sync engine</span>
             <span class="yr">2026</span>
             <span class="stage">▸ R&D</span>
           </div>
           <div class="row">
             <span class="idx">04 /</span>
-            <span class="ttl">Field Notes — Mobile Journal</span>
-            <span class="desc">Markdown-first daily log</span>
+            <span class="ttl" data-i18n="idx_proj4_ttl">Field Notes — Mobile Journal</span>
+            <span class="desc" data-i18n="idx_proj4_desc">Markdown-first daily log</span>
             <span class="yr">Q4 · 26</span>
             <span class="stage dim">▸ CONCEPT</span>
           </div>
@@ -474,9 +477,9 @@
     <div class="block-head">
       <div class="num mono">[03]</div>
       <div class="head-row">
-        <span class="id mono">// the studio</span>
-        <h2>A studio with a <em>clear axis</em>.</h2>
-        <span class="tail mono">est. 2024</span>
+        <span class="id mono" data-i18n="idx_s03_id">// the studio</span>
+        <h2 data-i18n-html="idx_s03_h2">A studio with a <em>clear axis</em>.</h2>
+        <span class="tail mono" data-i18n="idx_s03_tail">est. 2024</span>
       </div>
     </div>
     <div class="block-body">
@@ -484,14 +487,14 @@
       <div class="content">
         <div class="about-grid">
           <div class="about-l">
-            <p class="lead">SPDM started as a continuous‑learning project with a clear mission: <em>design and ship mobile apps people actually want to use</em>.</p>
-            <p>We are a small, hands‑on team. There are no account managers between you and the people writing the code — just clear scope, weekly demos, and software that gets better every Friday.</p>
-            <p>We pick problems that matter at the small scale: scoring a pickup game, tracking a habit, taking a note. Tools that live in the seams of someone's day.</p>
+            <p class="lead" data-i18n-html="idx_about_lead">SPDM started as a continuous‑learning project with a clear mission: <em>design and ship mobile apps people actually want to use</em>.</p>
+            <p data-i18n="idx_about_p1">We are a small, hands‑on team. There are no account managers between you and the people writing the code — just clear scope, weekly demos, and software that gets better every Friday.</p>
+            <p data-i18n="idx_about_p2">We pick problems that matter at the small scale: scoring a pickup game, tracking a habit, taking a note. Tools that live in the seams of someone's day.</p>
           </div>
           <div class="about-r">
-            <div class="stat"><div class="num">04</div><div class="lbl mono">Apps in motion</div><div class="desc">From shipped to early prototype.</div></div>
-            <div class="stat"><div class="num">02</div><div class="lbl mono">Years of practice</div><div class="desc">Design + engineering compounding.</div></div>
-            <div class="stat"><div class="num">∞</div><div class="lbl mono">Iterations welcome</div><div class="desc">We treat v1 as the start, not the end.</div></div>
+            <div class="stat"><div class="num">04</div><div class="lbl mono" data-i18n="idx_stat01_lbl">Apps in motion</div><div class="desc" data-i18n="idx_stat01_desc">From shipped to early prototype.</div></div>
+            <div class="stat"><div class="num">02</div><div class="lbl mono" data-i18n="idx_stat02_lbl">Years of practice</div><div class="desc" data-i18n="idx_stat02_desc">Design + engineering compounding.</div></div>
+            <div class="stat"><div class="num">∞</div><div class="lbl mono" data-i18n="idx_stat03_lbl">Iterations welcome</div><div class="desc" data-i18n="idx_stat03_desc">We treat v1 as the start, not the end.</div></div>
           </div>
         </div>
       </div>
@@ -503,9 +506,9 @@
     <div class="block-head">
       <div class="num mono">[04]</div>
       <div class="head-row">
-        <span class="id mono">// process</span>
-        <h2>How a project <em>runs</em>.</h2>
-        <span class="tail mono">~6–14 weeks</span>
+        <span class="id mono" data-i18n="idx_s04_id">// process</span>
+        <h2 data-i18n-html="idx_s04_h2">How a project <em>runs</em>.</h2>
+        <span class="tail mono" data-i18n="idx_s04_tail">~6–14 weeks</span>
       </div>
     </div>
     <div class="block-body">
@@ -540,9 +543,9 @@
     <div class="block-head">
       <div class="num mono">[05]</div>
       <div class="head-row">
-        <span class="id mono">// contact</span>
-        <h2>Let's <em>build</em> something.</h2>
-        <span class="tail mono">replies in ≤ 48h</span>
+        <span class="id mono" data-i18n="idx_s05_id">// contact</span>
+        <h2 data-i18n-html="idx_s05_h2">Let's <em>build</em> something.</h2>
+        <span class="tail mono" data-i18n="idx_s05_tail">replies in ≤ 48h</span>
       </div>
     </div>
     <div class="block-body">
@@ -550,8 +553,8 @@
       <div class="content">
         <div class="contact">
           <div class="contact-l">
-            <h3>Send a brief.<br/>Get a real <em>reply</em>.</h3>
-            <p>Tell us what you're building and where it's stuck. We read every message and answer with a real human, usually within two days.</p>
+            <h3 data-i18n-html="idx_contact_h3">Send a brief.<br/>Get a real <em>reply</em>.</h3>
+            <p data-i18n="idx_contact_p">Tell us what you're building and where it's stuck. We read every message and answer with a real human, usually within two days.</p>
             <div class="channels mono">
               <a href="mailto:spdmstudio@gmail.com"><span>EMAIL</span><span>spdmstudio@gmail.com →</span></a>
               <a href="https://github.com/SPDM-Studios" target="_blank"><span>GITHUB</span><span>@SPDM-Studios →</span></a>
@@ -563,19 +566,19 @@
               <input type="hidden" name="_subject" value="New brief from SPDM Studio site">
               <input type="hidden" name="_captcha" value="false">
               <div class="field">
-                <label><span>NAME</span><span class="req">required</span></label>
-                <input name="name" type="text" placeholder="Jane Cooper" required />
+                <label><span data-i18n="idx_form_name_lbl">NAME</span><span class="req" data-i18n="idx_form_required">required</span></label>
+                <input name="name" type="text" placeholder="Jane Cooper" data-i18n-placeholder="idx_form_name_ph" required />
               </div>
               <div class="field">
-                <label><span>EMAIL</span><span class="req">required</span></label>
-                <input name="email" type="email" placeholder="jane@studio.co" required />
+                <label><span data-i18n="idx_form_email_lbl">EMAIL</span><span class="req" data-i18n="idx_form_required">required</span></label>
+                <input name="email" type="email" placeholder="jane@studio.co" data-i18n-placeholder="idx_form_email_ph" required />
               </div>
               <div class="field">
-                <label><span>BRIEF</span><span>≤ 600 chars</span></label>
-                <textarea name="message" rows="5" placeholder="A short description of what you'd like to build, who it's for, and the timeline you're hoping for." required></textarea>
+                <label><span data-i18n="idx_form_brief_lbl">BRIEF</span><span data-i18n="idx_form_brief_chars">≤ 600 chars</span></label>
+                <textarea name="message" rows="5" placeholder="A short description of what you'd like to build, who it's for, and the timeline you're hoping for." data-i18n-placeholder="idx_form_brief_ph" required></textarea>
               </div>
               <button class="send mono" type="submit">
-                <span>Send brief</span>
+                <span data-i18n="idx_send">Send brief</span>
                 <span>→</span>
               </button>
             </form>
@@ -597,31 +600,32 @@
         <div class="desc">Software studio building small, durable products with care. Based remotely · operating globally.</div>
       </div>
       <div>
-        <h5>Studio</h5>
-        <a href="index.html">Index</a>
-        <a href="work.html">Work</a>
-        <a href="studio.html">Studio</a>
-        <a href="contact.html">Contact</a>
+        <h5 data-i18n="foot_nav_title">Studio</h5>
+        <a href="index.html" data-i18n="foot_home">Home</a>
+        <a href="work.html" data-i18n="nav_work">Work</a>
+        <a href="studio.html" data-i18n="nav_studio">Studio</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </div>
       <div>
-        <h5>Elsewhere</h5>
+        <h5 data-i18n="foot_elsewhere">Elsewhere</h5>
         <a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a>
         <a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a>
         <a href="https://play.google.com/store/apps/details?id=com.spdmstudio.myscoreboard" target="_blank">Play Store ↗</a>
       </div>
       <div>
-        <h5>Touch</h5>
+        <h5 data-i18n="foot_touch">Touch</h5>
         <a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a>
-        <a href="contact.html">Send brief →</a>
+        <a href="contact.html" data-i18n="foot_send_brief">Send brief →</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 SPDM STUDIO · ALL RIGHTS RESERVED</span>
-      <span>v0.4.2 · BUILT WITH CARE</span>
+      <span data-i18n="foot_copyright">© 2026 SPDM STUDIO · ALL RIGHTS RESERVED</span>
+      <span data-i18n="foot_version">v0.4.2 · BUILT WITH CARE</span>
     </div>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   // simple form intercept
   const form = document.getElementById('contactForm');

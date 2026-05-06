@@ -63,12 +63,13 @@
   <div class="inner">
     <a class="brand" href="index.html"><span class="dot"></span><span class="name">SPDM</span><span class="tag mono">/studio</span></a>
     <div class="links">
-      <a href="index.html">Index</a>
-      <a href="work.html">Work</a>
-      <a class="active" href="studio.html">Studio</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="work.html" data-i18n="nav_work">Work</a>
+      <a class="active" href="studio.html" data-i18n="nav_studio">Studio</a>
+      <a href="contact.html" data-i18n="nav_contact">Contact</a>
     </div>
-    <div class="meta mono"><span class="pulse"></span><span>OPEN FOR Q3 · 26</span></div>
+    <button class="lang-toggle mono" id="langToggle" onclick="i18n.toggle()">ES</button>
+    <div class="meta mono"><span class="pulse"></span><span data-i18n="nav_status">OPEN FOR Q3 · 26</span></div>
   </div>
 </nav>
 
@@ -79,10 +80,10 @@
       <aside class="hero-rail"><div class="rail-tick">S</div><div class="rail-tick">·</div><div class="rail-tick">·</div><div class="rail-tick">·</div></aside>
       <div class="ph-main">
         <div class="breadcrumb mono"><span>~/spdm-studio</span><span class="sep">›</span><span class="cur">studio</span></div>
-        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em">
+        <h1 style="font-family:Inter;font-weight:300;font-size:clamp(48px,7vw,108px);line-height:0.96;letter-spacing:-0.04em" data-i18n-html="std_hero_h1">
           A small studio<br/>with a <span style="color:var(--accent);font-style:italic;font-weight:400">clear axis</span>.
         </h1>
-        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch">
+        <p style="margin-top:28px;color:var(--fg-2);font-size:17px;line-height:1.6;font-weight:300;max-width:50ch" data-i18n="std_hero_p">
           We're a hands‑on team designing and building software products. No pitch decks, no account managers — just clear scope, weekly demos, and code we'd be proud to ship under our own name.
         </p>
       </div>
@@ -94,21 +95,21 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[01]</div>
-      <div class="head-row"><span class="id mono">// origin</span><h2>The <em>story</em>.</h2><span class="tail mono">est. 2024</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="std_s01_id">// origin</span><h2 data-i18n-html="std_s01_h2">The <em>story</em>.</h2><span class="tail mono" data-i18n="std_s01_tail">est. 2024</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
       <div class="content">
         <div class="about-grid">
           <div class="about-l">
-            <p class="lead">SPDM started as a continuous‑learning project with one mission: <em>design and ship mobile apps people actually use</em>.</p>
-            <p>We pick small problems on purpose. Scoring a pickup game. Tracking a habit. Taking a note. Tools that live in the seams of someone's day, not in the spotlight.</p>
-            <p>Most of our work has shipped under our own name first. Each project is a chance to test an idea with the same craft we'd bring to a client product — because we are also our own client.</p>
+            <p class="lead" data-i18n-html="std_origin_lead">SPDM started as a continuous‑learning project with one mission: <em>design and ship mobile apps people actually use</em>.</p>
+            <p data-i18n="std_origin_p1">We pick small problems on purpose. Scoring a pickup game. Tracking a habit. Taking a note. Tools that live in the seams of someone's day, not in the spotlight.</p>
+            <p data-i18n="std_origin_p2">Most of our work has shipped under our own name first. Each project is a chance to test an idea with the same craft we'd bring to a client product — because we are also our own client.</p>
           </div>
           <div class="about-r">
-            <div class="stat"><div class="num">04</div><div class="lbl mono">Apps in motion</div><div class="desc">Live, in build, or under prototype.</div></div>
-            <div class="stat"><div class="num">02</div><div class="lbl mono">Years of practice</div><div class="desc">Compounding craft, week by week.</div></div>
-            <div class="stat"><div class="num">∞</div><div class="lbl mono">Iterations welcome</div><div class="desc">v1 is the start, never the end.</div></div>
+            <div class="stat"><div class="num">04</div><div class="lbl mono" data-i18n="std_stat01_lbl">Apps in motion</div><div class="desc" data-i18n="std_stat01_desc">Live, in build, or under prototype.</div></div>
+            <div class="stat"><div class="num">02</div><div class="lbl mono" data-i18n="std_stat02_lbl">Years of practice</div><div class="desc" data-i18n="std_stat02_desc">Compounding craft, week by week.</div></div>
+            <div class="stat"><div class="num">∞</div><div class="lbl mono" data-i18n="std_stat03_lbl">Iterations welcome</div><div class="desc" data-i18n="std_stat03_desc">v1 is the start, never the end.</div></div>
           </div>
         </div>
       </div>
@@ -119,18 +120,18 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[02]</div>
-      <div class="head-row"><span class="id mono">// principles</span><h2>How we <em>work</em>.</h2><span class="tail mono">06 axioms</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="std_s02_id">// principles</span><h2 data-i18n-html="std_s02_h2">How we <em>work</em>.</h2><span class="tail mono" data-i18n="std_s02_tail">06 axioms</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
       <div class="content" style="padding:0">
         <div class="princ">
-          <div class="p"><div class="ix">P.01</div><h4>Code is the design.</h4><p>We prototype in real code on real devices. Figma is a sketchbook, not a destination.</p></div>
-          <div class="p"><div class="ix">P.02</div><h4>Ship weekly.</h4><p>Friday demos, Monday triage. Momentum compounds — so do small bugs.</p></div>
-          <div class="p"><div class="ix">P.03</div><h4>Default to less.</h4><p>Subtract a feature before adding one. Empty space is a feature.</p></div>
-          <div class="p"><div class="ix">P.04</div><h4>Earn the metaphor.</h4><p>Every animation, icon, and word should justify its weight in pixels.</p></div>
-          <div class="p"><div class="ix">P.05</div><h4>Own the seams.</h4><p>Loading states, errors, offline mode — the unglamorous places where trust is built.</p></div>
-          <div class="p"><div class="ix">P.06</div><h4>Build for the small scale.</h4><p>A handful of users who love a tool beats a million who tolerate it.</p></div>
+          <div class="p"><div class="ix">P.01</div><h4 data-i18n="std_p01_h4">Code is the design.</h4><p data-i18n="std_p01_p">We prototype in real code on real devices. Figma is a sketchbook, not a destination.</p></div>
+          <div class="p"><div class="ix">P.02</div><h4 data-i18n="std_p02_h4">Ship weekly.</h4><p data-i18n="std_p02_p">Friday demos, Monday triage. Momentum compounds — so do small bugs.</p></div>
+          <div class="p"><div class="ix">P.03</div><h4 data-i18n="std_p03_h4">Default to less.</h4><p data-i18n="std_p03_p">Subtract a feature before adding one. Empty space is a feature.</p></div>
+          <div class="p"><div class="ix">P.04</div><h4 data-i18n="std_p04_h4">Earn the metaphor.</h4><p data-i18n="std_p04_p">Every animation, icon, and word should justify its weight in pixels.</p></div>
+          <div class="p"><div class="ix">P.05</div><h4 data-i18n="std_p05_h4">Own the seams.</h4><p data-i18n="std_p05_p">Loading states, errors, offline mode — the unglamorous places where trust is built.</p></div>
+          <div class="p"><div class="ix">P.06</div><h4 data-i18n="std_p06_h4">Build for the small scale.</h4><p data-i18n="std_p06_p">A handful of users who love a tool beats a million who tolerate it.</p></div>
         </div>
       </div>
     </div>
@@ -140,7 +141,7 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[03]</div>
-      <div class="head-row"><span class="id mono">// team</span><h2>The <em>humans</em>.</h2><span class="tail mono">02 people</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="std_s03_id">// team</span><h2 data-i18n-html="std_s03_h2">The <em>humans</em>.</h2><span class="tail mono" data-i18n="std_s03_tail">02 people</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
@@ -150,16 +151,16 @@
             <div class="ph"><div class="init">S·P</div></div>
             <div>
               <h4>S. Pérez</h4>
-              <div class="role mono">Design + Mobile</div>
-              <p>Designs the product, then builds it. Spends most days alternating between Figma and Android Studio. Quietly opinionated about typography.</p>
+              <div class="role mono" data-i18n="std_p1_role">Design + Mobile</div>
+              <p data-i18n="std_p1_p">Designs the product, then builds it. Spends most days alternating between Figma and Android Studio. Quietly opinionated about typography.</p>
             </div>
           </div>
           <div class="person">
             <div class="ph"><div class="init">D·M</div></div>
             <div>
               <h4>D. Martín</h4>
-              <div class="role mono">Engineering + Backend</div>
-              <p>Owns the parts of the stack you don't see — APIs, infra, the boring reliable bits. Believes a good error message is a love letter.</p>
+              <div class="role mono" data-i18n="std_p2_role">Engineering + Backend</div>
+              <p data-i18n="std_p2_p">Owns the parts of the stack you don't see — APIs, infra, the boring reliable bits. Believes a good error message is a love letter.</p>
             </div>
           </div>
         </div>
@@ -171,7 +172,7 @@
   <section class="block">
     <div class="block-head">
       <div class="num mono">[04]</div>
-      <div class="head-row"><span class="id mono">// toolkit</span><h2>The <em>stack</em>.</h2><span class="tail mono">production-tested</span></div>
+      <div class="head-row"><span class="id mono" data-i18n="std_s04_id">// toolkit</span><h2 data-i18n-html="std_s04_h2">The <em>stack</em>.</h2><span class="tail mono" data-i18n="std_s04_tail">production-tested</span></div>
     </div>
     <div class="block-body">
       <div class="gutter"></div>
@@ -197,12 +198,13 @@
     <div class="foot-grid">
       <div class="gut"></div>
       <div class="brand-block"><div class="lg">SPDM<em>.</em></div><div class="desc">Software studio building small, durable products with care.</div></div>
-      <div><h5>Studio</h5><a href="index.html">Index</a><a href="work.html">Work</a><a href="studio.html">Studio</a><a href="contact.html">Contact</a></div>
-      <div><h5>Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
-      <div><h5>Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
+      <div><h5 data-i18n="foot_nav_title">Studio</h5><a href="index.html" data-i18n="foot_home">Home</a><a href="work.html" data-i18n="nav_work">Work</a><a href="studio.html" data-i18n="nav_studio">Studio</a><a href="contact.html" data-i18n="nav_contact">Contact</a></div>
+      <div><h5 data-i18n="foot_elsewhere">Elsewhere</h5><a href="https://github.com/SPDM-Studios" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/company/spdm-studio" target="_blank">LinkedIn ↗</a></div>
+      <div><h5 data-i18n="foot_touch">Touch</h5><a href="mailto:spdmstudio@gmail.com">spdmstudio@gmail.com</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 SPDM STUDIO</span><span>v0.4.2</span></div>
+    <div class="foot-bottom"><span data-i18n="foot_copyright">© 2026 SPDM STUDIO</span><span data-i18n="foot_version">v0.4.2</span></div>
   </div>
 </footer>
+<script src="i18n.js"></script>
 </body>
 </html>

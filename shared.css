@@ -36,6 +36,8 @@ nav.top .links a.active::before{background:var(--accent);border-color:var(--acce
 nav.top .meta{padding:14px 22px;border-left:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--fg-3);display:flex;align-items:center;gap:8px}
 nav.top .meta .pulse{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.lang-toggle{padding:14px 16px;border-left:1px solid var(--line);border-top:0;border-right:0;border-bottom:0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;background:transparent;color:var(--fg-2);cursor:pointer;display:flex;align-items:center;transition:color .2s,background .2s}
+.lang-toggle:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
 
 .hero-rail{border-right:1px solid var(--line);display:flex;flex-direction:column}
 .hero-rail.right{border-right:0;border-left:1px solid var(--line)}
